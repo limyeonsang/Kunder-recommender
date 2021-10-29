@@ -1,6 +1,4 @@
 from flask import Flask, request
-from sklearn.utils.extmath import density
-
 from utils import get_db, make_model, recommendation, preprocessing, db
 
 app = Flask(__name__)

@@ -24,7 +24,7 @@ def make_ibcf_model(score_matrix, df):
 
 
 def make_nmf_model(core):
-    nmf = NMF(n_components=6)
+    nmf = NMF(n_components=2)
 
     nmf_feature = nmf.fit_transform(core)
     return nmf_feature
