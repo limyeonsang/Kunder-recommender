@@ -18,7 +18,7 @@ def item_based_rec(song_id, recommendation_matrix):
 def nmfF_rec(target, norm_feature, song_ids):
     df = pd.DataFrame(norm_feature)
     x = df.join(song_ids)
-    pivot_df = pd.pivot_table(x, x[[0,1,2,3,4,5]], ['song_id'])
+    pivot_df = pd.pivot_table(x, x[[0,1]], ['song_id'])
 
     value = pivot_df.loc[target]
     similarities = pivot_df.dot(value)

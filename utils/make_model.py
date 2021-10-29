@@ -3,7 +3,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
 import pandas as pd
 from sklearn.decomposition import NMF
-from sklearn.preprocessing import normalize
+
 
 def make_col_cos_model(col ,p, pidx):
     col = col.fillna('')
@@ -30,6 +30,7 @@ def make_nmf_model(core):
     return nmf_feature
 
 def normalize(feature):
+    from sklearn.preprocessing import normalize
     norm_feature = normalize(feature)
     
     return norm_feature

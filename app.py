@@ -36,7 +36,9 @@ def rec_by_genre():
 
     df = get_db.get_genre_table(db)
     
-    nmf_feature = make_model.make_nmf_model(df[['genre','mood']])
+    core = df[['genre','mood']]
+
+    nmf_feature = make_model.make_nmf_model(core)
     norm_feature = make_model.normalize(nmf_feature)
     what_to_rec = recommendation.nmfF_rec(song_id, norm_feature, df.song_id)
 
